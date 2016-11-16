@@ -16,7 +16,7 @@
 	"host": "localhost:8080",
 	"basePath": "/UserWebServiceApi/rest",
 	"tags": [{
-		"name": "authenticate",
+		"name": "Authenticate",
 		"description": "Authenticate the user",
 		"externalDocs": {
 			"description": "Find out more",
@@ -97,7 +97,7 @@
 			
 			"/AuthenticateUser": {
 				"get": {
-					"tags": ["authenticate"],
+					"tags": ["Authenticate"],
 					"summary": "Authenticate the user",
 					"description": "Authenticate user credentials",
 					"operationId": "authenticateUser",
