@@ -1,0 +1,182 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"description": "This is a User Web Service Api which  is used to authenticate user as well as to create,update,read and delete user",
+		"version": "1.0.0",
+		"title": "User Web Service Api",
+		"termsOfService": "http://swagger.io/terms/",
+		"contact": {
+			"email": "shivam.sugandhi@jda.com"
+		},
+		"license": {
+			"name": "NexGen 2.0",
+			"url": "http://confluence.jda.com/"
+		}
+	},
+	"host": "localhost:8080",
+	"basePath": "/UserWebServiceApi/rest",
+	"tags": [{
+		"name": "authenticate",
+		"description": "Authenticate the user",
+		"externalDocs": {
+			"description": "Find out more",
+			"url": "http://swagger.io"
+		}
+	}, {
+		"name": "UserCRUD",
+		"description": "CRUD operations related to User"
+	}],
+	"schemes": ["http"],
+	"paths": {
+	"/UserCRUD/delete/{username}": {
+
+				"get": {
+					"tags": ["UserCRUD"],
+					"summary": "Deletes a user",
+					"description": "Delete the user with given username",
+					"operationId": "deleteUser",
+					"produces": ["application/json"],
+					"parameters": [{
+						"name": "username",
+						"in": "username",
+						"required": true,
+						"type": "string"
+					}],
+					"responses": {
+						"200": {
+							"description": "User deleted successfully"
+						},
+						"404": {
+							"description": "User not found"
+						},
+						"500": {
+							"description": "Unable to delete user"
+						}
+					}
+					
+				}
+			},
+			"/UserCRUD/update/{username}": {
+				"post": {
+					"tags": ["UserCRUD"],
+					"summary": "updates the user",
+					"description": "Requested user is updated in the user table",
+					"operationId": "updateUser",
+
+					"produces": ["application/json"],
+					"parameters": [{
+						"name": "username",
+						"in": "username",
+						"description": "username of user to update",
+						"required": true,
+						"type": "string"
+
+					}, {
+						"name": "password",
+						"in": "userPassword",
+						"description": "password to be updated for that user",
+						"required": true,
+						"type": "string"
+					}],
+					"responses": {
+						"200": {
+							"description": "User updated successfully"
+							
+						},
+						"404": {
+							"description": "User does not exists"
+							
+						},
+						"500": {
+							"description": "Unable to update user"
+							
+						}
+					}
+				}
+			},
+			
+			"/AuthenticateUser": {
+				"get": {
+					"tags": ["authenticate"],
+					"summary": "Authenticate the user",
+					"description": "Authenticate user credentials",
+					"operationId": "authenticateUser",
+					"produces": ["application/json"],
+					"parameters": [{
+							"name": "username",
+							"in": "username",
+							"description": "username of user to authenticate",
+							"required": true,
+							"type": "string"
+
+						}, {
+							"name": "Password",
+							"in": "userPassword",
+							"description": "password of user to authenticate",
+							"required": true,
+							"type": "string"
+						}
+
+
+					],
+					"responses": {
+						"200": {
+							"description": "Employee logged in successfully"
+
+						},
+						"401": {
+							"description": "Invalid username/password"
+
+						}
+
+
+					}
+				}
+			},
+		"/UserCRUD/add": {
+			"post": {
+				"tags": ["UserCRUD"],
+				"summary": "Add a new user",
+				"description": "A new user will be added to user table",
+				"operationId": "addUser",
+
+				"produces": ["application/json"],
+				"parameters": [{
+					"in": "username",
+					"name": "username",
+					"description": "Username which should be unique",
+					"required": true,
+					"type": "string"
+				}, {
+					"in": "userPassword",
+					"name": "password",
+					"description": "Password of the user",
+					"required": true,
+					"type": "string"
+				}],
+				"responses": {
+					"201": {
+						"description": "User created"
+					},
+					"200": {
+						"description": "User exists"
+					},
+					"409": {
+						"description": "Unable to add user"
+					}
+
+
+				}
+
+			}
+
+			
+			
+
+			
+
+
+			
+		}
+	}
+}

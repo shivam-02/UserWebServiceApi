@@ -9,7 +9,7 @@ import javax.ws.rs.core.Response;
 
 import com.tm.dao.UserDAO;
 
-@Path("/authenticateUser")
+@Path("/AuthenticateUser")
 public class AuthenticateUser {
 	
 	

@@ -14,7 +14,7 @@ import com.tm.dao.UserDAO;
 
 
 
-@Path("/userCRUD")
+@Path("/UserCRUD")
 public class UserCRUD {
 	
 	
