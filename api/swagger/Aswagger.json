@@ -38,7 +38,7 @@
 					"produces": ["application/json"],
 					"parameters": [{
 						"name": "username",
-						"in": "username",
+						"in": "path",
 						"required": true,
 						"type": "string"
 					}],
@@ -66,14 +66,14 @@
 					"produces": ["application/json"],
 					"parameters": [{
 						"name": "username",
-						"in": "username",
+						"in": "path",
 						"description": "username of user to update",
 						"required": true,
 						"type": "string"
 
 					}, {
 						"name": "password",
-						"in": "userPassword",
+						"in": "query",
 						"description": "password to be updated for that user",
 						"required": true,
 						"type": "string"
@@ -104,14 +104,14 @@
 					"produces": ["application/json"],
 					"parameters": [{
 							"name": "username",
-							"in": "username",
+							"in": "query",
 							"description": "username of user to authenticate",
 							"required": true,
 							"type": "string"
 
 						}, {
-							"name": "Password",
-							"in": "userPassword",
+							"name": "password",
+							"in": "query",
 							"description": "password of user to authenticate",
 							"required": true,
 							"type": "string"
@@ -142,13 +142,13 @@
 
 				"produces": ["application/json"],
 				"parameters": [{
-					"in": "username",
+					"in": "query",
 					"name": "username",
 					"description": "Username which should be unique",
 					"required": true,
 					"type": "string"
 				}, {
-					"in": "userPassword",
+					"in": "query",
 					"name": "password",
 					"description": "Password of the user",
 					"required": true,
