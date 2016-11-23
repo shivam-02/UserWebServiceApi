@@ -13,7 +13,7 @@
 			"url": "http://confluence.jda.com/"
 		}
 	},
-	"host": "localhost:8080",
+	"host": "10.104.15.90:8080",
 	"basePath": "/UserWebServiceApi/rest",
 	"tags": [{
 		"name": "Authenticate",
@@ -38,6 +38,7 @@
 					"produces": ["application/json"],
 					"parameters": [{
 						"name": "username",
+						"description": "username of user to delete",
 						"in": "path",
 						"required": true,
 						"type": "string"
